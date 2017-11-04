@@ -11,7 +11,7 @@
 syncFromVideo = {};
 CoderPad.position = {};
 // define your userid here
-syncFromVideo.userid = '888';
+syncFromVideo.userid = '';
 
 syncFromVideo.coderpadId = location.href.split('/')[3];
 
