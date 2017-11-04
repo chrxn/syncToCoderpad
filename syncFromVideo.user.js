@@ -6,13 +6,13 @@
 // @author       Karat
 // @include      https://coderpad.io/*/playback
 // @grant        GM_util
-// @require      https://www.gstatic.com/firebasejs/4.6.0/firebase.js
 // @run-at       document-end
 // ==/UserScript==
 syncFromVideo = {};
 CoderPad.position = {};
 // define your userid here
 syncFromVideo.userid = '888';
+
 syncFromVideo.coderpadId = location.href.split('/')[3];
 
 syncFromVideo.setupStream = function () {
@@ -31,5 +31,8 @@ syncFromVideo.setupStream = function () {
     location.hash = "#" + CoderPad.position.keystroke;
   });
 };
-
+if (syncFromVideo.userid === '') {
+  console.error('syncFromVideo: You have not defined your Karat userid in the syncFromVideo userscript.');
+} else {
 syncFromVideo.setupStream();
+}
